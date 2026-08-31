@@ -1,0 +1,733 @@
+1)
+
+1. The following is a list of the protocols utilized at the Application layer of the OSI model and the
+functionality of each protocol.
+. Telnet—Terminal emulation to a remote host
+. HTTP—Web-browsing service
+. HTTPS—Secure web browsing
+. FTP—File transfer
+. TFTP—Bare-bones file transfer
+. DNS—Name management
+. SMTP—Send emails
+. POP3—Receive emails
+. NFS—File sharing
+. NNTP—Usenet newsgroups
+. SNMP—Network management
+. NTP—Time management
+. DHCP—Dynamic host configuration
+2. The upper layers (Application, Presentation, and Session) pass data to the Transport layer. The
+Transport layer encapsulates the data into a segment that is handed down to the Network layer.
+The Network layer encapsulates the segment into a packet (or datagram) to be handed down to the
+Data Link layer. The Data Link layer encapsulates the packet (or datagram) into a frame and sends
+it to the Physical layer. The Physical layer then encapsulates the frame into a bit to be sent over
+the network.
+3. Used by TCP, PAR is the process by which the source device begins a timer when a segment is
+sent and retransmits if the timer runs out before an acknowledgment is received. The source
+device keeps track of segments that are sent and requires an acknowledgment for each segment.
+The destination device acknowledges when a segment is received by sending a packet to the
+source that iterates the next sequence number for which it is looking from the source.
+4. First, a connection agreement segment is sent to the recipient asking to synchronize systems.
+Second, a second and third segment acknowledge the request to connect and determine the rules
+of engagement. Sequencing synchronization is requested of the receiving device. A two-way connection is established. Third, a final segment is sent as an acknowledgment that the rules have
+been accepted and a connection has been formed.
+5. The following table lists comparisons of the key characteristics of the TCP and UDP protocols.
+TCP
+
+UDP
+
+Uses sequenced data transmissions
+
+Does not use sequenced data transmissions
+
+Reliable protocol
+
+Unreliable protocol
+
+Connection-oriented
+
+Connectionless
+
+Expensive to implement
+
+Inexpensive to implement
+
+Sends acknowledgments
+
+Does not send acknowledgments
+
+Uses windowing flow control
+
+Does not use windowing or flow control
+
+6. The following list includes the key functionalities of the Access layer of the Cisco hierarchical
+model:
+. Desktop layer
+. End-user connectivity
+. Virtual LAN (VLAN) workgroup definition
+. Continuation of the policies implemented at the distribution layer by using virtual access
+lists or filter lists
+. User access to locally available resources
+7. The following list includes the key functionalities of the Distribution layer of the Cisco hierarchical
+model:
+. Control layer
+. Middleman between the access and core layers
+. Acts as an aggregation point for access layer devices
+. Determines how and when to traverse packets to the core layer
+. Policy implementation
+. Network security
+. Routing (best path determination)
+. Routing between VLANs
+. Filtering
+. Access lists
+. Packet filtering
+. Quality of Service (QoS)
+. Network address translation (NAT)
+. Route filtering
+. WAN access
+. Defines broadcast and multicast domains
+. Translates between different types of media (i.e. ethernet and token ring)
+8. The following list includes the key functionalities of the Core layer of the Cisco hierarchical model:
+. Backbone layer
+. The Distribution layer manages access to the core.
+. High-speed switching
+. Reliability
+. Redundancy
+. Fault tolerance
+. Low latency
+. Enterprise servers (server farms)
+
+
+2)
+5. Straight-through cables use four wires and pins 1, 2, 3, and 6. Given those pins, pin 1 is connected on one end of the cable to pin 1 on the opposite end of the cable. Pin 2 at one end is connected
+to pin 2 on the far end. Pin 3 is connected to pin 3 and pin 6 is connected to pin 6.
+6. Cross-over cables also use four wires and pins 1, 2, 3, and 6. The difference is in how the pins are
+connected at each end. With cross-over cables, pin 1 connects to pin 3 and pin 2 connects to pin 6.
+
+3)
+1. Token-passing is a Data Link protocol that inserts a three-byte token (or special bit pattern) into a
+frame and passes it around the network in a single direction from one node to another until it
+forms a complete loop. The node that has possession of the token is the only one that can send
+data at any given time on that LAN. Because only one node can send data at a time, collisions are
+avoided.
+2. Standardized by the IEEE 802.5 specification
+A token-passing media access technology
+Set up as a physical ring or physical star topology
+Creates a logical ring topology
+Speeds are assigned as either 4Mbps or 16Mbps
+Utilizes an MSAU rather than a switch or hub
+Provides collision-free data transfer
+High overhead
+3. Developed by ANSI with the ANSI X3T9.5 specification
+A token-passing media access technology
+Set up as a dual ring topology
+Redundant, fault-tolerant network
+Speed is 100Mbps
+Runs over fiber-optic cable
+Not susceptible to EMI
+Provides collision-free data transfer
+Fault-detection provided by beaconing
+High overhead
+4. A unicast address identifies the MAC address of an individual LAN or NIC card.
+A multicast address forwards a frame to a subset of devices in the same LAN. IEEE ethernet multicast addresses always begin with 0100.5E in hexadecimal format. The last three bytes can be any
+combination.
+A broadcast address sends a frame to all devices in the same LAN. Broadcast addresses are
+always the same value, which is FFFF.FFFF.FFFF.
+5. CSMA/CD or Carrier Sense Multiple Access Collision Detection is an algorithm that sends a jam
+signal to notify the devices that there has been a collision. The devices then halt transmission for a
+random back-off time.
+6. The primary tasks performed by both bridges and switches are as follows:
+The source MAC address of every inbound frame is examined to learn its MAC address.
+You can decide whether to forward or filter a frame based on the destination MAC address.
+Eliminate loops that are caused by redundant connections by configuring Spanning Tree Protocol
+(STP).
+7. Half-duplex allows for one-way communication, which means that a device can only send or
+receive a data transmission at any given time. As a part of a shared collision domain, hubs must
+use half-duplex.
+Full-duplex allows for two-way communication, which means that a device can simultaneously
+send and receive data transmissions. Full-duplex is available with dedicated switch port connections to a single device. If a switch port connection is configured for full-duplex, the CSMA/CD
+algorithm must be disabled. Also, an ethernet connection set for full-duplex allows for 100%
+transmission speeds in both directions.
+8. Microsegmentation occurs when a switch creates a dedicated path for sending and receiving transmissions with each connected host. Each host then has a separate collision domain and a dedicated bandwidth.
+4)
+1. 128
+
+64
+
+32
+
+16
+
+8
+
+4
+
+2
+
+1
+
+0
+
+0
+
+1
+
+0
+
+1
+
+0
+
+1
+
+0
+
+32+8+2 = 42
+128
+
+64
+
+32
+
+16
+
+8
+
+4
+
+2
+
+1
+
+0
+
+0
+
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+32+16+8+4+2+1 = 63
+128
+
+64
+
+32
+
+16
+
+8
+
+4
+
+2
+
+1
+
+1
+
+1
+
+0
+
+1
+
+1
+
+1
+
+0
+
+0
+
+128+64+16+8+4 = 220
+128
+
+64
+
+32
+
+16
+
+8
+
+4
+
+2
+
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+128+64+32+16+8+4+2+1 = 255
+The correct answer is 42.63.220.255.
+2. 128
+
+64
+
+32
+
+16
+
+8
+
+4
+
+2
+
+1
+
+1
+
+0
+
+0
+
+1
+
+0
+
+1
+
+1
+
+0
+
+128
+
+64
+
+32
+
+16
+
+8
+
+4
+
+2
+
+1
+
+1
+
+1
+
+0
+
+0
+
+0
+
+0
+
+0
+
+1
+
+128
+
+64
+
+32
+
+16
+
+8
+
+4
+
+2
+
+1
+
+0
+
+0
+
+0
+
+0
+
+0
+
+1
+
+1
+
+0
+
+128
+
+64
+
+32
+
+16
+
+8
+
+4
+
+2
+
+1
+
+0
+
+1
+
+1
+
+0
+
+0
+
+1
+
+0
+
+0
+
+The correct answer is 10010110 11000001 00000110 01100100.
+3. The first hexadecimal character is 5, which is the same as the decimal value.
+8
+
+4
+
+2
+
+1
+
+0
+
+1
+
+0
+
+1
+
+The second hexadecimal character is F, which is 15 in decimal.
+8
+
+4
+
+2
+
+1
+
+1
+
+1
+
+1
+
+1
+
+Now you can combine the two 4-bit groups to get 01011111, which converts to 95 in decimal.
+4. IP Address Binary = 11001000 00111110 10110111 00011010
+Subnet Mask Binary= 11111111 11111111 11111111 00000000
+Boolean AND = 11001000 00111110 10110111 00000000
+The correct answer is 200.62.183.0.
+5. This is considered an easy mask. You just write down the original octets with a subnet mask value
+of 255 and a 0 for each octet with a 0 value in the subnet mask.
+The correct answer is 32.116.5.0.
+6. Because this has an easy subnet mask, you can copy the first three octets and then replace the last
+octet with 255.
+The correct answer is 213.50.201.255.
+7. This IP address subnet mask is 255.255.255.0, so the network ID is 220.9.3.0. The broadcast IP is
+220.9.3.255.
+The correct answer is 220.9.3.1–220.9.3.254.
+8. Zero subnet may also be referred to as subnet zero. The zero subnet is the first subnet in a network and has all binary 0s in the subnet field. For the purpose of taking the CCNA exam, you
+should not include the first subnet when calculating the number of networks in a larger subnet.
+This is one of the two reserved subnet numbers on a network and one of the reasons why you
+subtract from the total number of networks to get the correct answer for the test. The other network is the broadcast subnet, which has all 1s in the subnet field.
+9. Traffic that is generated by a device has the source MAC and source IP address of that device. If a
+frame is sent to a server on another segment of a WAN, the destination IP address is that of the
+server the frame is trying to reach. Because the server is not on the same segment, the destination
+MAC address is that of the router, which is the default gateway. The router takes a look at the
+frame and at its own routing table. It then decides what interface to use to forward the frame,
+based on the network portion of the IP address. The router attaches its own MAC address as the
+source MAC address of the frame before the frame is sent to the server.
+10. Suppress broadcasts or multicasts.
+Determine the best path for data transfer (routing).
+Strip down and add to Data Link layer frames.
+Implement access lists for packet filtering (permit/deny statements).
+Set up quality of service (QoS) qualifiers to measure network performance.
+
+5)
+1. A GBIC interface module can be inserted into the Gigabit Ethernet slot to allow for different media
+connections to that port. The physical media can range from copper to single-mode fiber. A GBIC
+is also hot swappable, so it can be installed without interrupting service to that switch.
+2. Basic Rate Interface (BRI)
+BRI is an ISDN line that consists of two 64Kbps bearer (B) channels and one 16Kbps data (D)
+channel. Voice, video, and data traffic can be carried over the B-channels. Signals between telephone company switches use the D-channel.
+Synchronous serial
+A synchronous serial interface synchronizes clocks for the bit stream of both the sending and
+receiving end of a serial link. This enables the data rate to be adjusted if necessary to ensure that
+both ends of a serial link are functioning at the same speed.
+Asynchronous serial
+An asynchronous serial interface does the opposite of a synchronous serial interface. It does not
+synchronize the clocks for the bit stream of the sending and receiving end of a serial link.
+High-Speed Serial Interface (HSSI)
+High Speed Serial Interfaces offer up to 52Mbps transmission rates to the WAN from a Cisco
+router.
+T1 controller card
+A T1 controller card can be installed in a router’s T1 slot to communicate with and control the 24
+DS0 channels.
+3. Data Circuit-Terminating Equipment (DCE) or Data Communications Equipment is the term used to identify a device that connects the Data Terminal Equipment (DTE) to a service provider's commu- nications line. DCE equipment may consist of a modem, CSU/DSU, or BRI NT-1.
+DTE is the term used to identify a device at the user end of a network and is connected to the serv- ice provider via the DCE device. DTE equipment may consist of a router, PC, or server.
+4. Cisco IOS software is developed and maintained by Cisco to support a full array of system func- tions, applications (including Internet applications), and network hardware in a single software package. IOS software is installed on each Cisco router or switch and can accommodate network growth and provide for secure data transfers. The command-line interface (CLI) for routers and switches defines the commands that are used to communicate with the IOS.
+5. Power over Ethernet (PoE) enables an end device to receive power over a copper ethernet cable. End devices that might use PoE include IP telephones, video cameras, and card scanners. This technology was originally developed by Cisco and called "inline power." IEEE has since standard- ized PoE with 802.3af.
+
+6)
+1. By changing any of the values in the configuration register from its default value of 0x2102, you
+are altering how the router or switch operates during initialization. The last hexadecimal field in the
+configuration register is the boot field. This value determines whether the device boots to ROM
+and loads the ROMmon (0x0) or RxBoot (0x1) program. Values of 0x2-0xF indicate that the device
+parses the startup configuration in NVRAM for any boot system commands. If the third hexadecimal character in the configuration register is a 0x4, the device ignores the startup configuration in NVRAM and enters the Setup Mode dialog.
+2. The boot system commands provide flexible means of specifying from where to load an IOS.
+This is especially useful if you require specifying a specific IOS file to load in Flash (if multiple files
+exist) or on a TFTP server.
+3. ROM contains the POST program and the bootstrap code for the initial stages of the booting
+process. ROM also contains the RxBoot mini-IOS for IOS failure fallback and ROMmon for RxBoot
+failure. Flash memory stores the IOS files. The configuration register is stored in NVRAM along
+with the startup configuration that contains any boot system commands.
+4. The console and AUX ports both use the rollover cable. The terminal settings should reflect the following parameters: 9600 baud, 8 data bits, no parity bits, 1 stop bit, and no flow control.
+5. User EXEC is useful if you have to give access to technicians who need rights to basic verification
+commands. Privileged EXEC enables access to the remaining command modes, including those
+commands that can affect the router or switch’s operations.
+
+7)
+1. The IP address configured on a Layer 2 switch is used for remote management of the device (for
+example, Telnet, SSH, or SNMP). The default gateway is also important for a Layer 2 switch so it
+can respond to any of these management requests from devices that are not on its LAN. The
+switch must send these remote requests to the default gateway (router on the local LAN segment)
+to reach back to the management station initiating the request.
+2. The password configurations on the terminal lines serve as a way to protect your router or switch
+from anyone gaining access to User EXEC.
+3. The copy command tells the Cisco device to copy a file from somewhere to somewhere. The
+available keyword options for the copy command are startup-config, running-config,
+tftp, and flash.
+4. CDP enables Cisco administrators to gain information from directly connected Cisco devices without requiring that they be connected with a terminal session. The show cdp neighbors
+detail or show cdp entry * command displays the Layer 3 address and the IOS version of
+the neighbors.
+5. ping and traceroute use ICMP to test IP connectivity. ping tests if one device has connectivity to another device. traceroute displays the path the packets take to reach the destination.
+traceroute is useful for determining faulty routers along the path to the destination.
+6. Given the show interfaces output x/line protocol is y, x represents the Physical layer status of
+the interface. y represents the Data Link layer status.
+
+8)
+1. When a switch receives an ethernet frame that contains an unknown source MAC
+
+address, it associates that MAC address with the receiving interface in the CAM table.
+When the switch receives an ethernet frame with an unknown unicast destination
+MAC address, the switch floods that frame out every port except the one in which it
+was received.
+2. Spanning-Tree protocol eliminates switching loops in environments when multiple
+
+switches are connected in a redundant design.
+3. PortFast is a Cisco-proprietary enhancement to STP that enables a switchport to
+
+bypass the Listening and Learning STP states for end-devices such as workstations and
+servers. BPDU Guard protects PortFast interfaces from switching loops by disabling
+an interface if a BPDU is received from another switch.
+4. Port security will enable you to limit the amount of MAC addresses that are learned on
+
+an interface. When the number of MAC addresses are exceeded, a violation occurs
+and the switchport becomes disabled.
+5. When you connect to a hub, collision detection must be enabled; thus, you must run
+
+the interface as half duplex. Full-duplex interfaces have collision detection disabled
+and can only be enabled when the switch port is connected to another switch or an
+end-device.
+
+9)
+1. VLANs are created in switches to segment broadcast domains at Layer 2. Departments in your
+organization can be assigned their own VLAN, which provides a logical segmentation in which traffic from one department does not interfere with that of another department. VLANs can span multiple switches, which simplifies administration when users need to move throughout the switched
+network.
+Chapter 9: Virtual LANs
+2. Trunks are used to carry VLAN traffic from one switch to another switch. Frames are tagged with a
+VLAN identifier as they traverse the trunk link and are removed on the receiving switch. ISL is a
+Cisco proprietary method of trunking in which the original frame is encapsulated with a 26-byte
+header and a 4-byte CRC. IEEE 802.1q trunks insert a 4-byte VLAN identifier inside the ethernet
+frame.
+3. VTP is a convenient Cisco proprietary Layer 2 protocol that enables switches to advertise VLAN
+configuration information to other switches in a VTP domain.
+4. Server mode is the default VTP mode in which VTP advertisements are sent to other switches in
+the VTP domain. VLAN configurations in Server mode are saved to NVRAM. Client mode processes and forwards VTP advertisements from the VTP Server. You cannot change any VLAN configurations or save the VLAN configuration in Client mode. Transparent mode also forwards VTP
+advertisements from the VTP Server; however, switches in Transparent mode do not process the
+VTP advertisements. In Transparent mode, you can configure VLANs and save them to NVRAM;
+however, these local VLANs are not advertised to other switches in the VTP domain.
+5. Router-on-a-stick is used when you want to allow traffic from one VLAN to be routed into another
+VLAN. Router-on-a-stick requires a switch to trunk to a Layer 3 router. The router uses subinterfaces to logically separate the VLANs into virtual interfaces in which the router can route in
+between.
+
+10)
+1. When a packet is destined for a remote network, the Layer 3 source address is the
+
+workstation or device that is sending the traffic. The destination Layer 3 address is the
+IP address of the destination device. At Layer 2, the source address is the MAC address
+of the sending workstation or device. The destination Layer 2 address, however, is the
+MAC address of the default gateway. The default gateway is the routing device on the
+local segment that is responsible for forwarding packets from the local segment to
+remote networks.
+2. Static routes are used primarily in stub networks or when the administrator wishes to
+
+have complete control over the routing decisions of their routing devices. Routing protocols are used in complex networks with multiple paths to a destination. Unlike static
+routes, routing protocols can dynamically react to topology changes in the internetwork.
+3. Distance vector routing protocols periodically send routing table updates to their
+
+directly connected neighbors regardless of whether there is a change in the topology.
+These routine routing updates contain the contents of the entire routing table.
+4. Link-state routing protocols initially discover their neighbors and retain that informa-
+
+tion in a neighbor table. Information about all possible routes is exchanged between
+these neighbors and stored in a router’s topology table. After the initial exchange of
+information, link-state routers periodically send hello messages as opposed to full routing updates. With the knowledge of all possible routes in the topology, the routers calculate the best route to each destination and place them in the routing table.
+5. Classful routing protocols do not contain the subnet mask in the routing updates.
+
+Networks using classful routing protocols require that a FLSM design does not support discontiguous networks. Classless routing protocols updates contain the subnet
+mask that enables the network design to support VLSM and discontiguous networks.
+
+11)
+1. Since distance vector routing protocols are susceptible to routing loops, they have incorporated
+several countermeasures to help mitigate any routing loop anomalies. For instance, all distance
+vector routing protocols have a maximum hop count to avoid counting-to-infinity. In addition, split
+horizon prevents routers from advertising networks out the same interface in which they were
+learned. Upon learning about a failing network, routers poison the route by setting it to an infinite
+metric and send a triggered update to the router’s neighbors. The router will not process new inferior information about the failed network until the hold-down timer expires to ensure the failed network does not get accidentally reinstated.
+2. RIP is a classful distance vector routing protocol that uses hop count as its metric (maximum of 15). RIP broadcasts the contents of the routing table to its directly connected neighbors every 30
+seconds.
+3. RIPv2 supports classless routing updates if the no auto-summary command is used. In addition, RIPv2 updates are sent as multicasts and can be authenticated using a MD5 password.
+4. IGRP is a classful distance vector Cisco proprietary routing protocol that uses a composite metric
+(bandwidth + delay) to determine the optimal path to a destination. IGRP also supports unequal
+path load balancing by using the variance command.
+5. To enable RIP and IGRP, you must enter the routing process by using the keyword router
+followed by the routing protocol. In the case of IGRP, you must also specify the autonomous system number which must match in all routers in the routing domain. Once in the routing configuration process, you must advertise the directly connected classful networks attached to the router by
+using the network command followed by the classful network.
+
+12)
+1. The OSPF Router ID is what the router uses to know the rest of the OSPF routing domain. The
+highest IP address of the logical loopback interfaces is used at the startup of the OSPF routing
+process to determine the OSPF Router ID. If no loopback interfaces are configured or enabled, the
+router uses the highest IP address of an active physical interface.
+2. The Designated Router is elected as broadcast and non-broadcast multi-access networks to minimize the amount of routing update overhead. On each network segment, the router with the highest interface priority (default is 1) is elected to be the DR, and the router with the interface with the
+second-highest priority is the BDR. In cases where the interface priorities are tied, the highest
+Router ID is used as a tiebreaker.
+3. OSPF areas serve as a way to segment an OSPF routing domain into smaller routing systems to
+reduce the amount of routing overhead and confine topology changes. Area 0 is known as the
+backbone area, to which all other areas must connect.
+4. The DUAL algorithm keeps track of the advertised distance and the feasible distance for each network in the topology table. The lowest feasible distance to a destination is known as a successor
+route and is the network that is put in the routing table. If the router receives an update that has an
+advertised distance less than the successor route’s feasible distance, that entry becomes the feasible successor, which is used in case the successor route fails.
+Chapter 12: Link-State and Hybrid Routing Protocols
+5. To configure OSPF and EIGRP, you must enter the routing process, using the router keyword
+followed by the routing protocol. In the case of OSPF, you must also specify a process ID to locally
+identify the instance of OSPF. The valid range of OSPF process IDs is between 1 and 65535 and
+does not need to match in all router configurations. On the other hand, EIGRP requires that you
+specify an autonomous system number that does have to match in all router configurations.
+After you are in the routing process, you advertise the connected networks with the network
+command. EIGRP configurations require that you enter the directly connected classful network(s)
+after the network keyword. Conversely, OSPF configurations require that you specify the network
+ID followed by the wildcard mask. Following the wildcard mask, you must also use the area keyword, followed by the area to which that network belongs.
+
+13)
+1. A standard access list is nothing more than a generic list of permit and deny statements. It
+chooses what devices are allowed through a router based on who they are (their source IP
+addresses).
+2. One access list, per protocol, per interface, per direction.
+3. Regardless of how an access list is applied, the router processes it the same: Statements are read
+from the top of the list down. If a packet matches one of the statements, the router executes the
+direction of the statement (permit or deny) and exits the access list processing. If the packet does
+not match any of the statements in the access list, it is implicitly denied.
+4. An extended access list gives you the option of filtering based on the TCP/IP sub-protocol (such as
+TCP, UDP, or ICMP), the destination address, and the source/destination port number. Beyond the
+CCNA level, an extended access list also enables you to filter based on criteria such as time of day
+or QoS marking.
+5. When communicating on a TCP/IP-based network, the destination port helps identify what server
+application your client is attempting to access. For example, sending data to TCP port 80 indicates
+the HTTP server service. The source port number is used to identify the client application to which
+the server should respond. These two ports are always necessary in any communication to identify
+the applications on both ends of the connection.
+
+14)  (this should be 15 check later)
+1. The three WAN connection categories are leased line, circuit switched, and packet switched.
+2. When configuring the physical connectivity for a serial WAN connection, you need to purchase
+either a DB-60 or Smart Serial WIC card for your router. From there, you need to purchase a cable
+that converts from the DB-60 or Smart Serial card of your Cisco router to the industry standard
+adapter found on the CSU/DSU device that connects to the service provider.
+3. The four features negotiated by the PPP Link Control Protocol (LCP) are compression, callback,
+multilink, and authentication.
+4. The Network Control Protocol (NCP) enables the router to encapsulate multiple upper-layer protocols (such as IP, IPX, and Appletalk) over a PPP WAN connection.
+5. The two PPP compression algorithms are Stacker and Predictor. The Stacker algorithm requires
+more processor resources and fewer memory resources. The Predictor algorithm uses more
+memory resources and fewer processor resources. Stacker is the best algorithm to use when there
+are varying traffic types crossing the PPP WAN connection. Predictor works best when you have
+similar traffic types using the PPP WAN connection.
+
+15)
+1. B-channels (short for bearer channels) are used to carry data traffic and offer 64Kbps for each channel. The D-channel (short for delta channel) is used to carry signaling information. Depending on the type of ISDN connection you are using, it could be 16 or 64Kbps.
+2. The two types of ISDN BRI interfaces you can purchase are the U and S/T interfaces. The U inter- face is used in the United States and Japan, whereas the S/T interface is used on all other conti- nents.
+3. Use the command debug isdn q921 to focus on the router-to-service provider communica- tion. The command debug isdn q931 is used to troubleshoot end-to-end connectivity. 4. When configuring DDR, first define static routes that inform the router about the networks it can reach over the DDR connection. You can then use a dialer list to define the interesting traffic that is able to initiate the DDR connection. Finally, you need to create dialer maps that dictate the num- bers to dial to reach the remote IP addresses.
+5. You can use a dialer profile configuration with ISDN interfaces any time you'd like. However, these configurations are usually applied when the ISDN either makes calls to different destinations or receives calls from different sources. The dialer profile can then change the logical configuration of the ISDN interface, based on the remote router configuration.
+
+16)
+1. The three Frame Relay virtual circuit design strategies are hub and spoke, partial mesh, and full
+mesh. Hub and spoke is the cheapest design; however, it also offers the least amount of redundancy. If the hub location fails, the entire WAN mesh goes down. In addition, the hub and spoke
+design increases the amount of delay for packets traveling between the spoke locations. This can
+be devastating for VoIP traffic. Partial mesh designs connect key sites with multiple virtual circuits.
+This offers redundancy for those key locations, but can become a more costly design. Full mesh
+offers the ultimate level of redundancy and delay guarantees, but requires a huge monthly cost to
+support the large number of circuits.
+2. Local Management Interface (LMI): This is the language spoken between your Frame Relay router
+and the service provider that is used to provide DLCI status and traffic statistics.
+Data Link Connection Identifier (DLCI): This is the Data Link address used to identify virtual circuits
+in the Frame Relay cloud.
+Local Access Rate: This is the maximum physical speed your interface connected to the Frame
+Relay cloud can use.
+Committed Information Rate: This is the level of bandwidth the service provider commits to give
+you on a regular basis.
+3. After your router receives DLCI information, it sends Inverse ARP messages to each DLCI number
+requesting the Layer 3 address of the remote router.
+4. Split-horizon is a loop-prevention mechanism that prevents a router from advertising a route out
+the same interface that received the original route advertisement. It can cause problems with
+Frame Relay because a hub router could have multiple destinations connected to a single physical
+interface. When those destinations send advertisements to the hub router, split horizon prevents
+the router from propagating the advertisements to other remote offices. The two methods you can
+use to resolve this issue are disabling the split-horizon mechanism or using point-to-point subinterfaces.
+5. The command you would be most likely to use to troubleshoot the failed DLCI communication is
+the show frame-relay lmi command. It enables you to focus on the communication with
+the Frame Relay service provider. If necessary, you may also use the debug frame-relay
+lmi command to probe deeper into the messages exchanged between your router and the service
+provider.
+
+17)
+
+
+
+
+
+
+

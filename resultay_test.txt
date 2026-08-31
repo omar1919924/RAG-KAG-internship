@@ -1,0 +1,125 @@
+[recursive_splitting]
+Total questions: 19
+Scores valides: 19
+Scores manquants (parsing échoué): 0
+
+Moyenne: 2.89
+Médiane: 4
+Écart-type: 1.56
+Min / Max: 1 / 5
+
+Distribution des scores:
+  1:   7 ( 36.8%) ███████
+  2:   0 (  0.0%) 
+  3:   2 ( 10.5%) ██
+  4:   8 ( 42.1%) ████████
+  5:   2 ( 10.5%) ██
+*************************************
+[recursive_splitting_copilot_way]
+(rag_kag_env) PS C:\Internship> & c:\Internship\code\rag_kag_env\Scripts\python.exe c:/Internship/calculScore.py
+Total questions: 19
+Scores valides: 19
+Scores manquants (parsing échoué): 0
+
+Moyenne: 2.11
+Médiane: 1
+Écart-type: 1.37
+Min / Max: 1 / 5
+
+Distribution des scores:
+  1:  10 ( 52.6%) ██████████
+  2:   2 ( 10.5%) ██
+  3:   3 ( 15.8%) ███
+  4:   3 ( 15.8%) ███
+  5:   1 (  5.3%) █
+**************************************************
+[best of copilot recursive_splitting ]
+Moyenne: 3.05
+Médiane: 3
+Écart-type: 1.22
+Min / Max: 1 / 5
+
+Distribution des scores:
+  1:   2 ( 10.5%) ██
+  2:   5 ( 26.3%) █████
+  3:   4 ( 21.1%) ████
+  4:   6 ( 31.6%) ██████
+  5:   2 ( 10.5%) ██
+**************************************
+[token splitting]
+Total questions: 19
+Scores valides: 19
+Scores manquants (parsing échoué): 0
+
+Moyenne: 2.89
+Médiane: 3
+Écart-type: 1.63
+Min / Max: 1 / 5
+
+Distribution des scores:
+  1:   6 ( 31.6%) ██████
+  2:   3 ( 15.8%) ███
+  3:   1 (  5.3%) █
+  4:   5 ( 26.3%) █████
+  5:   4 ( 21.1%) ████
+*************************************
+[semantic splitting]
+Total questions: 19
+Scores valides: 19
+Scores manquants (parsing échoué): 0
+
+Moyenne: 2.37
+Médiane: 2
+Écart-type: 1.50
+Min / Max: 1 / 5
+
+Distribution des scores:
+  1:   7 ( 36.8%) ███████
+  2:   6 ( 31.6%) ██████
+  3:   1 (  5.3%) █
+  4:   2 ( 10.5%) ██
+  5:   3 ( 15.8%) ███
+**************************************************************
+chroma3  after changing prompt
+Total questions: 19
+Scores valides: 19
+Scores manquants (parsing échoué): 0
+
+Moyenne: 2.47
+Médiane: 2
+Écart-type: 1.43
+Min / Max: 1 / 5
+
+Distribution des scores:
+  1:   6 ( 31.6%) ██████
+  2:   6 ( 31.6%) ██████
+  3:   1 (  5.3%) █
+  4:   4 ( 21.1%) ████
+  5:   2 ( 10.5%) ██
+-----------------------------------------------------------------------------
+Ce que je recommande avant de tirer des conclusions sur les méthodes de chunking :
+
+Calcule un taux de "Not found" sur questions répondables séparément — ça isole le problème retrieval
+Teste avec un top_k plus élevé pour voir si ça change beaucoup
+Élargis le test à plusieurs contrats (au moins 10-20) avant de comparer les stratégies de chunking de façon fiable — le bruit statistique sur 19 questions/1 contrat est trop élevé pour conclure
+-------------------------------------
+2WikiMultiHopQA[18], MuSiQue[19] and HotpotQA[20].    => search i try using these matrics for the final benchmark
+-----------------------------------------------------------------
+KAG   : on contract 1 :   node_count=142    /  edge_count=0
+node_count
+For your report, this is genuinely useful: "KAG's knowledge graph construction with a locally-hosted 8B model produced entities reliably but failed to construct meaningful relations, undermining its core structural advantage over RAG for this document type" is a real, defensible finding — not a failure of your setup.
+-------------------------------
+for fairness exemple of promt given to the kag model 
+
+
+You are extracting exact clauses from a legal contract for lawyer review.
+
+Rules:
+- Copy the relevant text EXACTLY as it appears in the context below. Do not paraphrase, summarize, or explain.
+- Only extract the specific clause(s) that answer the question — not surrounding sentences that aren't relevant.
+- If there are multiple relevant clauses, separate them with " | ".
+- If no part of the context answers the question, respond with exactly: Not found in context.
+- Do not add any commentary, labels, or explanation before or after the extracted text.
+
+Question: {Highlight the parts (if any) of this contract related to \"Document Name\" that should be reviewed by a lawyer. Details: The name of the contract"} }
+---------------------------------------------------------------------------

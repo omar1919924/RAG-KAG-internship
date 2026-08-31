@@ -1,0 +1,7 @@
+the ccna data(course material ) is noisy, can be used to the study of effects of noise ( page numbers, not scanned images , figure names without the actual figures _lost in the text extraction from the pdf_ mentions of the figures inside of paragraphs) rundom names mentions) can be used to determine which models to use (RAG or KAG ) in a compony where the data wanted to be included is too big to clean , just scan and go ) 
+2 to 3 models need to be evaluated 
+
+tried the Llama 8b -> knows the answears of many of the qcm qustions already , without the RAG/KAG help ,=> will not help a lot
+    the Llama 2b did worse job answearing the questions, => should be better for the comparision 
+
+a worse model ( lighter model with less paramets should be added to the experiement => should show more the effects of the KAG/RAG in the experiement)
